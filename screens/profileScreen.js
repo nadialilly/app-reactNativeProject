@@ -28,7 +28,7 @@ const ProfilePage = ({navigation}) => {
                     />
                      <FlatButton 
                         text='Meet Scores'
-                        onPress={() => Alert.alert('meet scores pressed')}
+                        onPress={() => navigation.navigate('Meet Scores')}
                     />
                      <FlatButton 
                         text='Skills Page'

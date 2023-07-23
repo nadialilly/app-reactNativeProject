@@ -4,6 +4,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 //import HomeScreen from "../screens/AboutMeScreen";
 import AboutMeScreen from "../screens/AboutMeScreen";
 import ProfilePage from "../screens/profileScreen";
+import MeetScoresScreen from "../screens/MeetScoresScreen";
 
 const Stack = createNativeStackNavigator();  
 
@@ -25,6 +26,11 @@ const MyStack = () => {
                     name= 'About Me'
                     component={AboutMeScreen}
                     options={{title: 'About Me'}}/>
+                <Stack.Screen
+                    name= 'Meet Scores'
+                    component={MeetScoresScreen}
+                    option={{title: 'Meet Scores'}}
+                />
             </Stack.Navigator>
       
     )
