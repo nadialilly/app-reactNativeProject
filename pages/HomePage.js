@@ -1,13 +1,33 @@
-import { View, Text, ImageBackground, StyleSheet } from "react-native";
+import { View, Text, Image, StyleSheet } from "react-native";
 import threegirls from '../assets/images/threegirls.jpg';
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { NavigationContainer } from "@react-navigation/native";
 
+const Stack = createNativeStackNavigator();
+
+const MyStack = () => {
+    return(
+        <NavigationContainer>
+            <Stack.Navigator>
+                <Stack.Screen
+                    name= 'Home'
+                    component={HomeScreen}
+                    options={{title: 'Welcome'}}
+                    />
+                <Stack.Screen 
+                    name= 'Profile'
+                    component={ProfileScreen}/>
+            </Stack.Navigator>
+        </NavigationContainer>
+    )
+
+}
 const HomePage = () => {
 
     return(
         <View styles={styles.container}>
-            <ImageBackground source={threegirls} resizeMode="cover" style={styles.image} >
+            <Image source={threegirls} style={styles.image} />
             <Text style={styles.text}>Gymnastics Life</Text>
-            </ImageBackground>
         </View>
     )
 };
@@ -18,13 +38,16 @@ const styles = StyleSheet.create({
     },
     image: {
         flex: 1,
+        width: null,
+       
         justifyContent: 'center',
-        height: 800,
-        width: 400
+        borderRadius: 100,
+        borderColor: '#fff',
+        borderWidth: 4
     },
     text: {
         color: 'white',
-        fontSize: 32,
+        fontSize: 42,
         textAlign: 'center'
     }
 });

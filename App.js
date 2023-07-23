@@ -1,22 +1,20 @@
 
-import { StyleSheet, Text, View } from 'react-native';
-import HomePage from './pages/HomePage';
+import { StyleSheet, View } from 'react-native';
+//import HomePage from './pages/HomePage';
+import AboutMeScreen from './screens/AboutMeScreen';
+import { NavigationContainer } from '@react-navigation/native';
+import ProfilePage from './screens/profileScreen';
+import MyStack from './components/mainComponent';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      
-      <HomePage />
+   
+    <NavigationContainer>
+      <MyStack/>
+   </NavigationContainer>
+   
     
-    </View>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+
